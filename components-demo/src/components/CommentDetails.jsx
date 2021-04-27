@@ -1,19 +1,18 @@
 import React from 'react';
-import faker from 'faker';
 // Configurable Component using Props System
-const CommentDetails = () => {
+const CommentDetails = (props) => {
     return (
         <>
             <div className="comment">
                 <a href="/" className="avatar">
-                    <img src={faker.image.avatar()} alt="avatar"></img>
+                    <img src={props.avatar} alt="avatar"></img>
                 </a>
                 <div className="content">
-                    <a href="/" className="author">Sam</a>
+                    <a href="/" className="author">{props.author}</a>
                     <div className="metadata">
-                        <span className="date">Today @6PM</span>
+                        <span className="date">{props.timeAgo}</span>
                     </div>
-                    <div className="text">Nice blog post!!</div>
+                    <div className="text">{props.content}</div>
                 </div>
             </div>
         </>
