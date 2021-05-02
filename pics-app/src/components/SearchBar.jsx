@@ -26,6 +26,7 @@ export default class SearchBar extends Component {
         // console.log(this.state.term); // Getting error because this is not bind with the function :::
         // Solution 1:
         console.log(this.state.term);
+        this.props.onSubmit(this.state.term);
     }
 
     // Solution 1
