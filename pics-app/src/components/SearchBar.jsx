@@ -12,10 +12,16 @@ export default class SearchBar extends Component {
     onInputClick() {
         console.log('Input is clicked');
     }
+
+    handleFormSubmit(event){
+        // To prevent the default behavious of form submit which basically render the whole form
+        event.preventDefault();
+        // console.log(this.state.term); // Getting error
+    }
     render() {
         return (
             <div className="ui segment">
-                <form className="ui form">
+                <form onSubmit={this.handleFormSubmit} className="ui form">
                     <div className="field">
                         <label>Image Search</label>
                         <input 
