@@ -1,10 +1,17 @@
-import React from 'react'
-import SearchBar from './SearchBar'
+import React from 'react';
+import axios from 'axios';
+import SearchBar from './SearchBar';
 
 class App extends React.Component {
     // Communicating child to parent: Invoke callbacks in children
     onSearchSubmit(term){
         console.log("data", term);
+        axios.get('https://api.unsplash.com/search/photos', {
+            params: {query: term},
+            headers: {
+                Authorization: 'Client-ID PnGDzIXbzPvJS-LuM8XRwVr1YwPVgTb1O4Oj-stzkuU'
+            }
+        })
     }
 
     render(){
