@@ -2,9 +2,12 @@ import React, { Component } from 'react'
 
 export default class SearchBar extends Component {
 
-    onInputChange(event) {
-        console.log(event.target.value);
-    }
+    // callback function
+    // onInputChange(event) {
+    //     console.log(event.target.value);
+    // }
+
+    state = {term: ''}
 
     onInputClick() {
         console.log('Input is clicked');
@@ -18,7 +21,9 @@ export default class SearchBar extends Component {
                         <input 
                             type="text"
                             onClick={this.onInputClick} 
-                            onChange={this.onInputChange} />
+                            value={this.state.term}
+                            // onChange={this.onInputChange} />
+                            onChange={(e) => this.setState({term: e.target.value})} />
                     </div>
                 </form>
             </div>
