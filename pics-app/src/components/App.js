@@ -1,24 +1,25 @@
 import React from 'react';
-import axios from 'axios';
+import unsplash from '../utils/axios/unsplash';
 import SearchBar from './SearchBar';
 
 class App extends React.Component {
+
+    state = { images: [] }
     // Communicating child to parent: Invoke callbacks in children
-    async onSearchSubmit(term){
+    onSearchSubmit = async (term) => {
         console.log("data", term);
-        const responce = await axios.get('https://api.unsplash.com/search/photos', {
+        const responce = await unsplash.get('/search/photos', {
             params: {query: term},
-            headers: {
-                Authorization: 'Client-ID PnGDzIXbzPvJS-LuM8XRwVr1YwPVgTb1O4Oj-stzkuU'
-            }
+            
         })
-        console.log(responce.data.results);
+        this.setState({ images: responce.data.results })
     }
 
     render(){
         return (
             <div className="ui container" style={{margin: '20px'}}>
                 <SearchBar onSubmit={this.onSearchSubmit} />
+                {this.state.images.length}
             </div>
         )
     }
