@@ -4,14 +4,15 @@ import SearchBar from './SearchBar';
 
 class App extends React.Component {
     // Communicating child to parent: Invoke callbacks in children
-    onSearchSubmit(term){
+    async onSearchSubmit(term){
         console.log("data", term);
-        axios.get('https://api.unsplash.com/search/photos', {
+        const responce = await axios.get('https://api.unsplash.com/search/photos', {
             params: {query: term},
             headers: {
                 Authorization: 'Client-ID PnGDzIXbzPvJS-LuM8XRwVr1YwPVgTb1O4Oj-stzkuU'
             }
         })
+        console.log(responce.data.results);
     }
 
     render(){
