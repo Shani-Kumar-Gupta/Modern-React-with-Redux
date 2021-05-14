@@ -1,9 +1,11 @@
 import React from 'react';
 import './App.css';
+import TodoForm from './components/todo/TodoForm';
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="todo-app">
+      <TodoForm />
     </div>
   );
 }
