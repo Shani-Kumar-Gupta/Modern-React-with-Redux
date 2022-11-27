@@ -11,7 +11,11 @@ import React from 'react';
 // }
 
 function App() {
-  return <h1>Hello React!!!</h1>;
+  let message = 'Bye There!!';
+  if (Math.random() > 0.5) {
+    message = 'Hii There!!';
+  }
+  return <h1>{message}</h1>;
 }
 
 export default App;
