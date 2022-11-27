@@ -12,6 +12,8 @@ import React from 'react';
 
 function App() {
   let message = 'Bye There!!';
+  const name = 'Shani Kumar Gupta';
+  let age = 25;
   if (Math.random() > 0.5) {
     message = 'Hii There!!';
   }
@@ -20,6 +22,7 @@ function App() {
       <h1>{message}</h1>
       <p>Time: {new Date().toLocaleDateString()}</p>
       <p>Time: {new Date().toLocaleTimeString()}</p>
+      <p>Hi, My name is {name + ' and my age is ' + age}</p>
     </>
   );
 }
