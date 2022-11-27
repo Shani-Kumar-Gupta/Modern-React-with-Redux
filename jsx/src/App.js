@@ -15,7 +15,13 @@ function App() {
   if (Math.random() > 0.5) {
     message = 'Hii There!!';
   }
-  return <h1>{message}</h1>;
+  return (
+    <>
+      <h1>{message}</h1>
+      <p>Time: {new Date().toLocaleDateString()}</p>
+      <p>Time: {new Date().toLocaleTimeString()}</p>
+    </>
+  );
 }
 
 export default App;
