@@ -1,0 +1,24 @@
+1. What is React?
+2. How React App start up?
+3. JSX -> Transpiled by Babel -> (All js file merged in a single JS file) -> using webpack -> bundle.js
+4. npx create-react-app appName
+File and Folder Structure -
+  node_modules -> Folder with all the dependencies required to run our React application
+  public
+    favicon.icon -> Icon that shows up on the browers tab
+    index.html -> HTML file used to start our app
+    logo192.png
+    logo512.png
+    manifest.json -> File used for progressive web apps (used for mobile devices)
+    robots.txt -> Used to tell search engine about our app
+  src
+    App.css -> CSS styling
+    App.js -> Main app component of our app
+    App.test.js -> Code to test the App component
+    index.css -> CSS styling
+    index.js -> Main startup file
+    logo.svg -> 
+    reportWebVitals.js -> Monitoring and statistics
+    setupTests.js -> More testing code
+  package-lock.json -> Used to manage the dependencies by NPM
+  package.json
